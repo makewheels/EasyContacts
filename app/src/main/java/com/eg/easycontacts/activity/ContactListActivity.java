@@ -4,6 +4,8 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -92,5 +94,47 @@ public class ContactListActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    //菜单id
+    private final int MENU_GROUP_ID = 1;
+    private final int MENU_ITEM_ID_HELLO1 = 1;
+    private final int MENU_ITEM_ID_HELLO2 = 2;
+    private final int MENU_ITEM_ID_HELLO3 = 3;
+
+    /**
+     * 创建菜单
+     *
+     * @param menu
+     * @return
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(MENU_GROUP_ID, MENU_ITEM_ID_HELLO1, 1, "hello1");
+        menu.add(MENU_GROUP_ID, MENU_ITEM_ID_HELLO2, 2, "hello2");
+        menu.add(MENU_GROUP_ID, MENU_ITEM_ID_HELLO3, 3, "hello3");
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    /**
+     * 菜单点击
+     *
+     * @param item
+     * @return
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case MENU_ITEM_ID_HELLO1:
+                Toast.makeText(this, "这是第1个啦", Toast.LENGTH_SHORT).show();
+                break;
+            case MENU_ITEM_ID_HELLO2:
+                Toast.makeText(this, "这是第2个啦", Toast.LENGTH_SHORT).show();
+                break;
+            case MENU_ITEM_ID_HELLO3:
+                Toast.makeText(this, "这是第3个啦", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
