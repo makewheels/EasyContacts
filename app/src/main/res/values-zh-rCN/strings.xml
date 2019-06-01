@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">简单联系人</string>
+    <string name="ToContactList">转到联系人列表</string>
+    <string name="Here_is_some_info_for_you">这是一些吐司信息</string>
+</resources>
